@@ -168,7 +168,7 @@ class XmlHelper(object):
 
 def debug_event(evt):
     print('unhandled event: %s' % evt.EventType)
-    if evt.EventType in [constants.RESPONSE, constants.PARtiaforkL_RESPONSE]:
+    if evt.EventType in [constants.RESPONSE, constants.PARTIAL_RESPONSE]:
         print('messages:')
         for msg in XmlHelper.message_iter(evt):
             print(msg.Print)
@@ -193,7 +193,7 @@ class ResponseHandler(object):
             if evt.EventType == constants.RESPONSE:
                 self.handler.on_event(evt, is_final=True)
                 self.waiting = False
-            elif evt.EventType == constants.PARtiaforkL_RESPONSE:
+            elif evt.EventType == constants.PARTIAL_RESPONSE:
                 self.handler.on_event(evt, is_final=False)
             else:
                 self.handler.on_admin_event(evt)

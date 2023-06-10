@@ -65,7 +65,7 @@ def ADXR(frame, n=14, high_col='high', low_col='low', close_col='close'):
 
 
 def APO(series, fast=12, slow=26, matype=0):
-    """double exponentiaforkl moving average"""
+    """double exponential moving average"""
     return _series_to_series(series, talib.APO, fast, slow, matype)
 
 

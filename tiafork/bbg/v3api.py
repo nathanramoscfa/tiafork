@@ -22,7 +22,8 @@ __all__ = ['Terminal']
 class XmlHelper(object):
     @staticmethod
     def security_iter(nodearr):
-        """ provide a security data iterator by returning a tuple of (Element, SecurityError) which are mutually exclusive """
+        """ provide a security data iterator by returning a tuple of (Element, SecurityError) which are mutually
+        exclusive"""
         assert nodearr.name() == 'securityData' and nodearr.isArray()
         for i in range(nodearr.numValues()):
             node = nodearr.getValue(i)
@@ -184,7 +185,7 @@ class XmlHelper(object):
 
 def debug_event(evt):
     print('unhandled event: %s' % evt.EventType)
-    if evt.EventType in [blpapi.Event.RESPONSE, blpapi.Event.PARtiaforkL_RESPONSE]:
+    if evt.EventType in [blpapi.Event.RESPONSE, blpapi.Event.PARTIAL_RESPONSE]:
         print('messages:')
         for msg in XmlHelper.message_iter(evt):
             print(msg.Print)
@@ -722,7 +723,7 @@ class Terminal(object):
                 if evt.eventType() == blpapi.Event.RESPONSE:
                     request.on_event(evt, is_final=True)
                     break
-                elif evt.eventType() == blpapi.Event.PARtiaforkL_RESPONSE:
+                elif evt.eventType() == blpapi.Event.PARTIAL_RESPONSE:
                     request.on_event(evt, is_final=False)
                 else:
                     request.on_admin_event(evt)

@@ -27,6 +27,5 @@ pip-log.txt
 # pycharm files
 .idea
 
-
 # ignore ipython checkpoints
 .ipynb_checkpoints

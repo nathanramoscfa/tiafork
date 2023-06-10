@@ -14,7 +14,7 @@ from tiafork.util.fmt import PercentFormatter, new_percent_formatter, new_float_
 __all__ = ['RoiiRetCalculator', 'AumRetCalculator', 'FixedAumRetCalculator', 'CumulativeRets', 'Performance']
 
 
-def return_on_initiaforkl_capital(capital, period_pl, leverage=None):
+def return_on_initial_capital(capital, period_pl, leverage=None):
     """Return the daily return series based on the capital"""
     if capital <= 0:
         raise ValueError('cost must be a positive number not %s' % capital)

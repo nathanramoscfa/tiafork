@@ -11,7 +11,7 @@ try:
 except:
     pass
 
-from functools import partiaforkl
+from functools import partial
 
 
 def is_datetime_arraylike(arr):
@@ -88,7 +88,7 @@ class NumberFormat(object):
             if hasattr(self, k):
                 setattr(self, k, v)
 
-        self_with_args = partiaforkl(self.__call__, **kwargs)
+        self_with_args = partial(self.__call__, **kwargs)
 
         if isinstance(value, pd.Series):
             return value.apply(self_with_args)
@@ -269,7 +269,6 @@ class DynamicNumberFormat(object):
         self.formatter_args = formatter_args
         self.method = method
 
-
     def __call__(self, value, **kwargs):
         for k in list(kwargs.keys()):
             if hasattr(self, k):
@@ -277,7 +276,7 @@ class DynamicNumberFormat(object):
                 kwargs.pop(k)
         method = self.method
 
-        self_with_args = partiaforkl(self.__call__, **kwargs)
+        self_with_args = partial(self.__call__, **kwargs)
 
         if method is not None and isinstance(value, pd.DataFrame):
             if method == 'cell':
