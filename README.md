@@ -1,11 +1,11 @@
 # tiafork: Toolkit for Integration and Analysis (Fork of a Fork)
 
 ## This is a Fork of a Fork!
-This project is a fork of the Python 3 compliant version of the `tia` toolkit made by [PaulMest](https://github.com/PaulMest/tia). We've named it `tiafork`.
+This project is a fork of the Python 3 compliant version of the `tia` toolkit made by [PaulMest](https://github.com/PaulMest/tia). I've named it `tiafork`.
 
 The original `tia` project was developed with Python 2. PaulMest updated it to be Python 3 compliant, and this project, `tiafork`, builds upon that work. This version is also Python 3 compliant and **NOT** Python 2 compliant.
 
-We are open to additional community contributions. Just submit a pull request.
+I are open to additional community contributions. Just submit a pull request.
 
 ## Overview
 TIAFORK is a toolkit that provides Bloomberg data access, easier PDF generation, backtesting functionality, technical analysis functionality, return analysis, and a few windows utils.

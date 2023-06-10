@@ -12,8 +12,12 @@ def read_file(path):
         return f.read()
 
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
+
 AUTHOR = 'Nathan Ramos, CFA®'
-AUTHOR_EMAIL = 'nathan.ramos.cfa@gmail.com'
+AUTHOR_EMAIL = 'info@nrcapitalmanagement.com'
 PACKAGE = 'tiafork'
 PACKAGE_DESC = 'Fork of tia: Toolkit for integration and analysis'
 VERSION = tiafork.__version__
@@ -21,10 +25,7 @@ URL = "https://github.com/nathanramoscfa/tiafork"
 REQUIRED = ['pandas', 'numpy']
 REQUIRED_FOR_TESTS = []
 
-LONG_DESC = """\
-TIAFORK is a fork of TIA, a toolkit that provides bloomberg data access, easier pdf generation, backtesting 
-functionality, technical analysis functionality, and return analysis.
-"""
+LONG_DESC = long_description
 
 setuptools.setup(
     author=AUTHOR,
