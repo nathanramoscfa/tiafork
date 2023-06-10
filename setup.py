@@ -1,29 +1,29 @@
 import setuptools
-import tia
-
+import tiafork
 
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
+
 def read_file(path):
     with open(path, 'r') as f:
         return f.read()
 
 
-AUTHOR = 'Brian P Smith'
-AUTHOR_EMAIL = 'brian.p.smith@gmail.com'
-PACKAGE = 'tia'
-PACKAGE_DESC = 'Toolkit for integration and analysis'
-VERSION = tia.__version__
-URL = "https://github.com/bpsmith/tia"
+AUTHOR = 'Nathan Ramos, CFA®'
+AUTHOR_EMAIL = 'nathan.ramos.cfa@gmail.com'
+PACKAGE = 'tiafork'
+PACKAGE_DESC = 'Fork of tia: Toolkit for integration and analysis'
+VERSION = tiafork.__version__
+URL = "https://github.com/nathanramoscfa/tiafork"
 REQUIRED = ['pandas', 'numpy']
 REQUIRED_FOR_TESTS = []
 
 LONG_DESC = """\
-TIA is a toolkit that provides bloomberg data access, easier pdf generation, backtesting functionality,
-technical analysis functionality, and return analysis.
+TIAFORK is a fork of TIA, a toolkit that provides bloomberg data access, easier pdf generation, backtesting 
+functionality, technical analysis functionality, and return analysis.
 """
 
 setuptools.setup(
@@ -34,10 +34,10 @@ setuptools.setup(
     install_requires=REQUIRED,
     long_description=LONG_DESC,
     name=PACKAGE,
-    packages=['tia', 'tia.analysis', 'tia.bbg', 'tia.rlab', 'tia.tests',
-        'tia.util', 'tia.analysis.model'],
-    package_dir={'tia': 'tia'},
-    test_suite='tia.tests',
+    packages=['tiafork', 'tiafork.analysis', 'tiafork.bbg', 'tiafork.rlab', 'tiafork.tests',
+              'tiafork.util', 'tiafork.analysis.model'],
+    package_dir={'tiafork': 'tiafork'},
+    test_suite='tiafork.tests',
     tests_require=REQUIRED_FOR_TESTS,
     url=URL,
     version=VERSION,
@@ -51,7 +51,7 @@ setuptools.setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
         'Topic :: Office/Business :: Financial',
         'Topic :: Office/Business :: Financial :: Investment',
         'Topic :: Utilities',
