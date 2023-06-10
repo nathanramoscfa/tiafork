@@ -34,6 +34,7 @@ setuptools.setup(
     include_package_data=True,
     install_requires=REQUIRED,
     long_description=LONG_DESC,
+    long_description_content_type="text/markdown",
     name=PACKAGE,
     packages=['tiafork', 'tiafork.analysis', 'tiafork.bbg', 'tiafork.rlab', 'tiafork.tests',
               'tiafork.util', 'tiafork.analysis.model'],
